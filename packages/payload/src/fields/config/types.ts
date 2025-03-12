@@ -404,6 +404,10 @@ export type BaseValidateOptions<TData, TSiblingData, TValue> = {
   event?: 'onChange' | 'submit'
   id?: number | string
   operation?: Operation
+  /**
+   * The path of the field, e.g. ["group", "myArray", 1, "textField"]. The path is the schemaPath but with indexes and would be used in the context of field data, not field schemas.
+   */
+  path: (number | string)[]
   preferences: DocumentPreferences
   previousValue?: TValue
   req: PayloadRequest
@@ -1399,6 +1403,9 @@ export type Block = {
     singularName?: string
   }
   imageAltText?: string
+  /**
+   * Preferred aspect ratio of the image is 3 : 2
+   */
   imageURL?: string
   /** Customize generated GraphQL and Typescript schema names.
    * The slug is used by default.

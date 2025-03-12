@@ -901,7 +901,7 @@ export interface ContentBlock {
  * via the `definition` "NoBlockname".
  */
 export interface NoBlockname {
-  text: string;
+  text?: string | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'noBlockname';
@@ -967,7 +967,7 @@ export interface LocalizedContentBlock {
  * via the `definition` "localizedNoBlockname".
  */
 export interface LocalizedNoBlockname {
-  text: string;
+  text?: string | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'localizedNoBlockname';
@@ -1086,6 +1086,7 @@ export interface CodeField {
   json?: string | null;
   html?: string | null;
   css?: string | null;
+  codeWithPadding?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -2853,6 +2854,7 @@ export interface CodeFieldsSelect<T extends boolean = true> {
   json?: T;
   html?: T;
   css?: T;
+  codeWithPadding?: T;
   updatedAt?: T;
   createdAt?: T;
 }
